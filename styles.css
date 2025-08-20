@@ -5,73 +5,198 @@
   box-sizing: border-box;
 }
 
+/* Body: uma única definição (remova duplicatas antigas) */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.8;
-  color: #222;
-  background: #797979;
+  color: #ffffff;
+  background: #000000;
+  /* compensar a navbar fixa (ajuste conforme altura real da navbar) */
+  padding-top: 72px;
 }
 
-/* Navbar */
+/* Navbar base */
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: #ffffffd9; /* fundo branco translúcido */
+  height: 72px;                     /* altura fixa para facilitar o cálculo do padding-top */
+  background: rgba(0,0,0,0.85);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  border-bottom: 1px solid #eaeaea;
+  padding: 12px 60px;
+  border-bottom: 1px solid rgba(243,243,243,0.08);
   z-index: 1000;
 }
+
+/* Logo */
 .navbar .logo {
-  font-weight: 600;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-}
-.navbar ul {
   display: flex;
-  list-style: none;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.15rem;
+  gap: 12px;
 }
-.navbar li {
-  margin-left: 30px;
-}
-.navbar a {
-  text-decoration: none;
-  color: #222;
-  font-weight: 400;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-.navbar a:hover {
-  color: #0077cc;
+.logo-img {
+  width: 44px;   /* maior que antes */
+  height: 44px;
+  object-fit: contain;
+  border-radius: 4px;
 }
 
-/* Hero */
-.hero {
-  height: 100vh;
-  background: url('https://source.unsplash.com/1600x900/?creative,studio') center/cover no-repeat;
+/* Links do menu principal */
+.nav-links {
   display: flex;
-  justify-content: center;
+  list-style: none;
   align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cada item do menu */
+.nav-links li {
+  position: relative; /* necessário para o dropdown absoluto */
+  margin-left: 0;
+}
+
+/* Links principais */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: color 0.2s ease, transform 0.12s;
+  padding: 8px 6px;
+  display: inline-block;
+}
+.nav-links a:hover {
+  color: #00d4ff;
+  transform: translateY(-1px);
+}
+
+/* Carrinho */
+.cart {
+  position: relative;
+  cursor: pointer;
+  margin-left: 12px;
+}
+.cart-icon {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+.cart:hover .cart-icon {
+  color: #00d4ff;
+}
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 20px;
+  min-height: 20px;
   text-align: center;
-  padding: 0 20px;
+  line-height: 16px;
+  border: 2px solid black;
+}
+
+/* DROPDOWN -------------------------------------------------- */
+.has-dropdown .drop-toggle::after {
+  content: ""; /* ocultamos o caret extra, já usamos ▾ no texto */
+}
+
+/* Menu interno do dropdown (escondido por padrão) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(60% + 10px);
+  left: 0;
+  background: rgba(0,0,0,0.95);
+  padding: 10px 0;
+  list-style: none;
+  min-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  z-index: 3000;
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+/* Itens dentro do dropdown */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #fff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: 0.18s, color 0.18s;
+}
+.dropdown-menu li a:hover {
+  background: #00a0e6;
+  color: #fff;
+}
+
+/* Mostrar dropdown ao hover (desktop) */
+.has-dropdown:hover > .dropdown-menu {
+  display: block;
+  animation: dropdownFade .12s ease-out;
+}
+
+/* animação pequena */
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------------------------------------------- */
+
+/* Hero (mantive as mudanças que já usamos) */
+.hero {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+  height: calc(100vh - 72px); /* desconta a altura da navbar fixa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+              url(https://blog.estacio.br/wp-content/uploads/2021/04/photo-1486312338219-ce68d2c6f44d-780x450.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Ajuste do texto sobre o hero */
+.hero-text {
+  padding-top: 0;
+  color: #fff;
+  z-index: 1;
+  margin-top: 12px; /* espaço para não encostar na navbar */
 }
 .hero-text h1 {
   font-size: 3rem;
   font-weight: 600;
-  color: #000;
+  color: #ffffff;
   margin-bottom: 15px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.12);
 }
 .hero-text p {
   font-size: 1.3rem;
-  color: #000;
+  color: #fff;
 }
 
-/* Seções */
+/* Seções (mantenha as suas regras, com max-width) */
 section {
   padding: 120px 20px;
   max-width: 1100px;
@@ -83,19 +208,146 @@ section h2 {
   font-size: 2.2rem;
   font-weight: 500;
   letter-spacing: 1px;
+  color: #ffffff;
+}
+
+/* Resto do CSS (portfolio, serviços, contato, footer) mantive igual ao original */
+/* ========== Sobre ========== */
+.sobre {
+  padding: 40px 20px 100px; /* espaçamento superior e inferior */
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+/* Título grande à esquerda com linha fina abaixo */
+.sobre-header {
+  margin-bottom: 28px;
+}
+.sobre-header h2 {
+  font-size: 4rem;           /* título grande como na imagem */
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+.sobre-hr {
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  margin-top: 20px;
+}
+
+/* Grid principal: texto | imagem */
+.sobre-container {
+  display: grid;
+  grid-template-columns: 1fr 600px; /* largura fixa da coluna de imagem similar à sua foto */
+  gap: 48px;
+  align-items: stretch;
+}
+
+/* Coluna do texto (esquerda) */
+.sobre-text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0;
+}
+.sobre-text h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.sobre-text p {
+  color: rgba(255,255,255,0.92);
+  line-height: 1.9;
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+/* Botão estilo arredondado */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: #ffffff;
   color: #111;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.30);
 }
 
-/* Sobre */
-.sobre p {
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
-  font-size: 1.2rem;
-  color: #444;
+/* Coluna da imagem (direita) com linha vertical divisória */
+.sobre-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* Portfolio */
+/* linha vertical na borda esquerda da imagem para separar as colunas */
+.sobre-image::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255,255,255,0.12);
+  transform: translateX(-50%); /* centraliza a linha exatamente entre as colunas */
+}
+
+/* imagem responsiva dentro da coluna direita */
+.sobre-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 560px; /* controla a altura — ajuste conforme necessário */
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 1100px) {
+  .sobre-container {
+    grid-template-columns: 1fr 420px;
+    gap: 36px;
+  }
+  .sobre-header h2 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .sobre-header h2 {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+  .sobre-hr { display: none; } /* simplifica no mobile */
+  .sobre-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .sobre-image::before { display: none; } /* oculta a linha vertical no mobile */
+  .sobre-text {
+    align-items: center;
+    text-align: center;
+  }
+  .sobre-text p {
+    max-width: 100%;
+  }
+  .btn-primary { margin: 0 auto; }
+}
+
 .portfolio .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -104,21 +356,20 @@ section h2 {
 .portfolio .card img {
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.08);
   transition: transform 0.3s ease;
 }
 .portfolio .card img:hover {
   transform: scale(1.04);
 }
 
-/* Serviços */
 .servicos .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 .servicos .service {
-  background: #fafafa;
+  background: #000000;
   padding: 30px;
   border-radius: 15px;
   text-align: center;
@@ -137,11 +388,10 @@ section h2 {
   display: block;
   margin-top: 15px;
   font-weight: bold;
-  color: #222;
+  color: #f5f5f5;
   font-size: 1.1rem;
 }
 
-/* Contato */
 .contato ul {
   list-style: none;
   text-align: center;
@@ -150,10 +400,9 @@ section h2 {
 .contato li {
   margin: 15px 0;
   font-size: 1.2rem;
-  color: #333;
+  color: #ffffff;
 }
 
-/* Footer */
 footer {
   background: #111;
   color: #eee;

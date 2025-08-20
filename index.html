@@ -10,34 +10,76 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Cooperativa Arte & Design</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#contato">Contato</a></li>
+ <nav class="navbar">
+  <div class="logo">
+    <img src="assets/icons/coperativalogo.jpeg" alt="Logo" class="logo-img">
+    Coperativa Arte & Design
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#">Início</a></li>
+    <li><a href="#">Serviços</a></li>
+    <li><a href="#">Portfólio</a></li>
+    <li><a href="#">Contato</a></li>
+
+    <!-- Dropdown: "Mais" -->
+    <li class="has-dropdown">
+      <a href="#" class="drop-toggle">Mais ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Agendamento online</a></li>
+        <li><a href="#">Loja</a></li>
+        <li><a href="#">Blog</a></li>
       </ul>
-    </nav>
-  </header>
+    </li>
+  </ul>
+
+  <!-- Carrinho -->
+  <div class="cart" onclick="addToCart()">
+    <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h12m-5 4a1 1 0 100-2 1 1 0 000 2zm-6 
+        0a1 1 0 100-2 1 1 0 000 2z" />
+    </svg>
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
+</nav>
 
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero-text">
-      <h1>Bem-vindo à Cooperativa Arte & Design</h1>
-      <p>Transformamos ideias em criações únicas</p>
+      <h1>Seja Bem-Vindo(a)</h1>
+      <p>Transformamos Perfis para o Sucesso</p>
     </div>
   </section>
 
-  <!-- Sobre -->
-  <section id="sobre" class="sobre">
+ <!-- Sobre -->
+<section id="sobre" class="sobre">
+  <div class="sobre-header">
     <h2>Sobre Nós</h2>
-    <p>Somos uma cooperativa criativa que une talentos da arte, design e comunicação. Nosso objetivo é oferecer soluções
-      visuais modernas, acessíveis e impactantes.</p>
-  </section>
+    <div class="sobre-hr"></div> <!-- linha horizontal abaixo do título -->
+  </div>
+
+  <div class="sobre-container">
+    <div class="sobre-text">
+      <h3>Nossa Missão</h3>
+
+      <p>
+        A Coperativa | Arte e Designer Digital auxilia microempresas e microempreendedores a desenvolver
+        perfis profissionais orientados para as vendas. Melhoramos o apelo visual para atrair clientes e oferecemos
+        serviços de arte digital, incluindo catálogos, posts, convites e cartões de visita. Nosso objetivo é ajudar
+        os clientes a atrair clientes, compartilhar seu trabalho, exibir depoimentos e oferecer serviços de design.
+      </p>
+
+      <a href="#" class="btn-primary">Conheça Mais</a>
+    </div>
+
+    <div class="sobre-image">
+      <!-- coloque aqui o caminho da sua imagem -->
+      <img src="assets/image/images.jpg" alt="Foto escritório/monitor">
+    </div>
+  </div>
+</section>
+
 
   <!-- Portfólio -->
   <section id="portfolio" class="portfolio">
