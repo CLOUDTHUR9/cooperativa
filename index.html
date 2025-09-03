@@ -17,22 +17,23 @@
     Coperativa Arte & Design
   </div>
 
-  <ul class="nav-links">
-    <li><a href="#">Início</a></li>
-    <li><a href="#">Serviços</a></li>
-    <li><a href="#">Portfólio</a></li>
-    <li><a href="#">Contato</a></li>
+ <ul class="nav-links">
+  <li><a href="#home">Início</a></li>
+  <li><a href="#portfolio">Portfólio</a></li>
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="#contato" class="btn-contato">Contato</a></li>
+<li><a href="servicos/servicos.html">Serviços</a></li>
 
-    <!-- Dropdown: "Mais" -->
-    <li class="has-dropdown">
-      <a href="#" class="drop-toggle">Mais ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="#">Agendamento online</a></li>
-        <li><a href="#">Loja</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-    </li>
-  </ul>
+  <!-- Dropdown: "Mais" -->
+  <li class="has-dropdown">
+    <a href="#" class="drop-toggle">Mais ▾</a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Agendamento online</a></li>
+      <li><a href="#">Loja</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </li>
+</ul>
 
   <!-- Carrinho -->
   <div class="cart" onclick="addToCart()">
@@ -54,11 +55,13 @@
   </section>
 
  <!-- Sobre -->
-<section id="sobre" class="sobre">
+<section id="sobre" class="reveal">
   <div class="sobre-header">
     <h2>Sobre Nós</h2>
     <div class="sobre-hr"></div> <!-- linha horizontal abaixo do título -->
   </div>
+  
+  
 
   <div class="sobre-container">
     <div class="sobre-text">
@@ -81,9 +84,8 @@
   </div>
 </section>
 
-
 <!-- Portfólio -->
-<section id="portfolio" class="portfolio">
+<section id="portfolio" class="reveal">
   <div class="container-portfolio">
     <div class="portfolio-header">
       <h2>Meu portfólio</h2>
@@ -105,7 +107,7 @@
 
 
   <!-- Serviços -->
-  <section id="servicos" class="servicos">
+  <section id="servicos" class="reveal">
     <h2>Serviços</h2>
     <div class="grid">
       <div class="service">
@@ -162,5 +164,24 @@
   </div>
 </section>
 
+<script>
+  // Pega todos os elementos com .reveal
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active'); // ativa a animação
+        // Se quiser que a animação só dispare uma vez:
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 }); // ativa quando 15% do elemento estiver visível
+
+  reveals.forEach(reveal => {
+    observer.observe(reveal);
+  });
+</script>
+</body>
 
 </html>

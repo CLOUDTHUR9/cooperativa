@@ -1,0 +1,121 @@
+/* Link ativo na navbar */
+.nav-links a.active {
+  color: #00d4ff;
+  position: relative;
+}
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 100%; height: 2px;
+  background: #00d4ff;
+  border-radius: 2px;
+  opacity: .85;
+}
+
+/* Hero de Serviços */
+.servicos-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px 20px;
+  text-align: center;
+}
+.servicos-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+/* Container de Serviços */
+.servicos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 100px;
+}
+
+/* GRID RESPONSIVO — 3 no desktop, 2 no tablet, 1 no mobile */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* sempre 3 colunas */
+  gap: 32px;
+  justify-items: stretch; /* garante alinhamento horizontal */
+  align-items: stretch;   /* garante altura igual dos cards */
+}
+
+/* Card */
+.servico-card {
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  transition: transform .28s ease, box-shadow .28s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.servico-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.75);
+}
+
+/* Imagens sempre iguais */
+.servico-media img {
+  width: 100%;
+  height: 260px;   /* todas com altura fixa */
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Corpo do card */
+.servico-body {
+  flex: 1;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.servico-body h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 14px 0;
+}
+.servico-sep {
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 14px 0 10px;
+}
+.servico-meta {
+  list-style: none;
+  margin: 0 0 18px 0;
+  padding: 0;
+}
+.servico-meta li {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+}
+
+/* Botão */
+.btn-agendar {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #00d4ff;
+  color: #000;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+}
+.btn-agendar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,212,255,0.25);
+}
+
+/* Responsivo */
+@media (max-width: 560px) {
+  .servico-media img { height: 180px; }
+}

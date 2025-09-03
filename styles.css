@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* Body: uma única definição (remova duplicatas antigas) */
 body {
@@ -495,6 +498,7 @@ section h2 {
   color: #f5f5f5;
   font-size: 1.1rem;
 }
+
 
 /* Contato */
 @keyframes fadeInUpContato {
