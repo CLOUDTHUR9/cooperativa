@@ -1,28 +1,27 @@
-<!-- servicos/servicos.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Serviços | Coperativa Arte & Design</title>
-  <link rel="stylesheet" href="../styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossos Serviços</title>
+  <link rel="stylesheet" href="servicos.css">
 </head>
 <body>
-  <!-- NAVBAR (mesma do seu index) -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
-      <img src="../assets/icons/coperativalogo.jpeg" alt="Logo" class="logo-img">
+      <img src="assets/icons/coperativalogo.jpeg" alt="Logo" class="logo-img">
       Coperativa Arte & Design
     </div>
 
     <ul class="nav-links">
-      <li><a href="../index.html#home">Início</a></li>
-      <li><a href="../index.html#portfolio">Portfólio</a></li>
-      <li><a href="../index.html#sobre">Sobre</a></li>
-      <li><a href="../index.html#contato" class="btn-contato">Contato</a></li>
-      <li><a href="./servicos.html" class="active">Serviços</a></li>
+      <li><a href="../index.html#inicio">Inicio</a></li>
+      <li><a href="../index.html#Portifólio">Portfólio</a></li>
+      <li><a href="../index.html#Sobre">Sobre</a></li>
+      <li><a href="../index.html" class="btn-contato">Contato</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
 
+      <!-- Dropdown -->
       <li class="has-dropdown">
         <a href="#" class="drop-toggle">Mais ▾</a>
         <ul class="dropdown-menu">
@@ -33,9 +32,10 @@
       </li>
     </ul>
 
-    <div class="cart" onclick="addToCart()">
+    <!-- Carrinho -->
+    <div class="cart" onclick="openCart()">
       <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
           d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h12m-5 4a1 1 0 100-2 1 1 0 000 2zm-6 
           0a1 1 0 100-2 1 1 0 000 2z" />
       </svg>
@@ -43,62 +43,48 @@
     </div>
   </nav>
 
-  <!-- TÍTULO -->
-  <section class="servicos-hero reveal">
+  <!-- Hero -->
+  <section class="hero">
     <h1>Nossos serviços</h1>
   </section>
 
-  <!-- GRID DE SERVIÇOS -->
-  <section id="servicos" class="servicos reveal">
+  <!-- Grid -->
+  <section class="servicos">
     <div class="servicos-grid">
 
       <!-- Card 1 -->
       <article class="servico-card">
-        <div class="servico-media">
-          <img src="../assets/image/experimento1.jpeg" alt="Design de Catálogos">
-        </div>
-        <div class="servico-body">
-          <h3>Design de Catálogos</h3>
-          <div class="servico-sep"></div>
-          <ul class="servico-meta">
-            <li>1 h</li>
-            <li>R$ 150</li>
-          </ul>
-          <button class="btn-agendar" onclick="scheduleService('Design de Catálogos',150)">Agendar</button>
-        </div>
+        <img src="img/catalogo.jpg" alt="Design de Catálogos">
+        <h3>Design de Catálogos</h3>
+        <div class="divider"></div>
+        <p>1 h</p>
+        <p>R$ 150</p>
+        <button onclick="addToCart('Design de Catálogos', 150)">Agendar</button>
       </article>
 
       <!-- Card 2 -->
       <article class="servico-card">
-        <div class="servico-media">
-          <img src="../assets/image/experimento2.jpeg" alt="Cartões de Visita">
-        </div>
-        <div class="servico-body">
-          <h3>Cartões de Visita</h3>
-          <div class="servico-sep"></div>
-          <ul class="servico-meta">
-            <li>1 h 30 min</li>
-            <li>R$ 120</li>
-          </ul>
-          <button class="btn-agendar" onclick="scheduleService('Cartões de Visita',120)">Agendar</button>
-        </div>
+        <img src="img/cartao-visita.jpg" alt="Cartões de Visita">
+        <h3>Cartões de Visita</h3>
+        <div class="divider"></div>
+        <p>1 h 30 min</p>
+        <p>R$ 120</p>
+        <button onclick="addToCart('Cartões de Visita', 120)">Agendar</button>
       </article>
 
       <!-- Card 3 -->
       <article class="servico-card">
-        <div class="servico-media">
-          <img src="../assets/image/experimento3.jpeg" alt="Criação de Posts">
-        </div>
-        <div class="servico-body">
-          <h3>Criação de Posts</h3>
-          <div class="servico-sep"></div>
-          <ul class="servico-meta">
-            <li>45 min</li>
-            <li>R$ 100</li>
-          </ul>
-          <button class="btn-agendar" onclick="scheduleService('Criação de Posts',100)">Agendar</button>
-        </div>
+        <img src="img/posts.jpg" alt="Criação de Posts">
+        <h3>Criação de Posts</h3>
+        <div class="divider"></div>
+        <p>45 min</p>
+        <p>R$ 100</p>
+        <button onclick="addToCart('Criação de Posts', 100)">Agendar</button>
       </article>
 
     </div>
   </section>
+
+  <script src="servicos.js"></script>
+</body>
+</html>
