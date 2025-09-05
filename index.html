@@ -11,99 +11,105 @@
 </head>
 
 <body>
- <nav class="navbar">
-  <div class="logo">
-    <img src="assets/icons/coperativalogo.jpeg" alt="Logo" class="logo-img">
-    Coperativa Arte & Design
-  </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/icons/coperativalogo.jpeg" alt="Logo" class="logo-img">
+      Coperativa Arte & Design
+    </div>
 
- <ul class="nav-links">
-  <li><a href="#home">Início</a></li>
-  <li><a href="#portfolio">Portfólio</a></li>
-  <li><a href="#sobre">Sobre</a></li>
-  <li><a href="#contato" class="btn-contato">Contato</a></li>
-<li><a href="servicos/servicos.html">Serviços</a></li>
+    <ul class="nav-links">
+      <li><a href="#home">Início</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato" class="btn-contato">Contato</a></li>
+      <li><a href="servicos/servicos.html">Serviços</a></li>
 
-  <!-- Dropdown: "Mais" -->
-  <li class="has-dropdown">
-    <a href="#" class="drop-toggle">Mais ▾</a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Agendamento online</a></li>
-      <li><a href="#">Loja</a></li>
-      <li><a href="#">Blog</a></li>
+      <!-- Dropdown: "Mais" -->
+      <li class="has-dropdown">
+        <a href="#" class="drop-toggle">Mais ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Agendamento online</a></li>
+          <li><a href="#">Loja</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </li>
     </ul>
-  </li>
-</ul>
 
-  <!-- Carrinho -->
-  <div class="cart" onclick="addToCart()">
-    <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h12m-5 4a1 1 0 100-2 1 1 0 000 2zm-6 
-        0a1 1 0 100-2 1 1 0 000 2z" />
-    </svg>
-    <span class="cart-count" id="cart-count">0</span>
-  </div>
-</nav>
+    <!-- Carrinho -->
+    <div class="cart" onclick="openCart()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h12m-5 4a1 1 0 100-2 1 1 0 000 2zm-6 
+          0a1 1 0 100-2 1 1 0 000 2z" />
+      </svg>
+      <span class="cart-count" id="cart-count">0</span>
+    </div>
+  </nav>
 
   <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Seja Bem-Vindo(a)</h1>
-      <p class="hero-085">Transformamos Perfis para o Sucesso</p>
-    </div>
-  </section>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Seja Bem-Vindo(a)</h1>
+    <p>Transformando Perfis para o Sucesso</p>
+    <a href="#sobre" class="btn-hero">Saiba Mais</a>
+  </div>
+</section>
 
- <!-- Sobre -->
-<section id="sobre" class="reveal">
+  <!-- Sobre -->
+  <section id="sobre" class="reveal">
   <div class="sobre-header">
     <h2>Sobre Nós</h2>
-    <div class="sobre-hr"></div> <!-- linha horizontal abaixo do título -->
+    <div class="sobre-hr"></div>
   </div>
-  
-  
 
   <div class="sobre-container">
     <div class="sobre-text">
       <h3>Nossa Missão</h3>
-
       <p>
-        A Coperativa | Arte e Designer Digital auxilia microempresas e microempreendedores a desenvolver
+        A Cooperativa | Arte e Designer Digital auxilia microempresas e microempreendedores a desenvolver
         perfis profissionais orientados para as vendas. Melhoramos o apelo visual para atrair clientes e oferecemos
         serviços de arte digital, incluindo catálogos, posts, convites e cartões de visita. Nosso objetivo é ajudar
         os clientes a atrair clientes, compartilhar seu trabalho, exibir depoimentos e oferecer serviços de design.
       </p>
-
-
+      <a href="#servicos" class="btn-primary">Conheça Mais</a>
     </div>
 
     <div class="sobre-image">
-      <!-- coloque aqui o caminho da sua imagem -->
       <img src="assets/image/images.jpg" alt="Foto escritório/monitor">
     </div>
   </div>
 </section>
 
-<!-- Portfólio -->
-<section id="portfolio" class="reveal">
+ <section id="portfolio" class="reveal">
   <div class="container-portfolio">
     <div class="portfolio-header">
+      <!-- Fonte DM Sans -->
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
       <h2>Meu portfólio</h2>
       <p>
         Bem-vindo ao meu portfólio. Aqui você encontrará uma seleção dos meus trabalhos.
         Explore meus projetos para saber mais sobre o que faço.
       </p>
     </div>
-
-    <div class="portfolio-grid">
-      <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.24 (1).jpeg" alt="Projeto 1"></article>
-      <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.24.jpeg" alt="Projeto 2"></article>
-      <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.28 (1).jpeg" alt="Projeto 3"></article>
-      <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.28.jpeg" alt="Projeto 4"></article>
-      <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.29.jpeg" alt="Projeto 4"></article>
-    </div>
   </div>
 </section>
+
+      <div class="portfolio-grid">
+  <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.24 (1).jpeg"></article>
+  <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.24.jpeg"></article>
+  <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.28 (1).jpeg"></article>
+  <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.28.jpeg"></article>
+  <article class="card"><img src="assets/image/WhatsApp Image 2025-09-02 at 20.58.29.jpeg"></article>
+</div>
+</section>
+
+
+  <!-- Lightbox -->
+<div id="lightbox">
+  <span id="close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
   <!-- Serviços -->
   <section id="servicos" class="reveal">
@@ -127,60 +133,58 @@
     </div>
   </section>
 
+  <!-- Contato -->
   <section id="contato" class="contato">
-  <!-- Lado esquerdo -->
-  <div class="contato-esquerda">
-    <h2>| Coperativa |</h2>
-    <p class="subtitulo">Design e Media Digital</p>
-    
-    <div class="logo-circle">
-      <img src="assets/icons/coperativalogo.jpeg" alt="Logo Coperativa">
+    <!-- Lado esquerdo -->
+    <div class="contato-esquerda">
+      <h2>| Coperativa |</h2>
+      <p class="subtitulo">Design e Media Digital</p>
+      
+      <div class="logo-circle">
+        <img src="assets/icons/coperativalogo.jpeg" alt="Logo Coperativa">
+      </div>
     </div>
-  </div>
 
-  <!-- Lado direito -->
-  <div class="contato-direita">
-    <h3>Entre em Contato<br>Conosco</h3>
+    <!-- Lado direito -->
+    <div class="contato-direita">
+      <h3>Entre em Contato<br>Conosco</h3>
 
-<!-- Botões Sociais -->
-<div class="social-container">
-  <a href="https://wa.me/5516981095578" target="_blank" class="social-btn">
-    <img src="assets/icons/icone-whatsapp.png" alt="WhatsApp">
-  </a>
-  <a href="https://instagram.com/coperativa_artedigital" target="_blank" class="social-btn">
-    <img src="assets/icons/icon-instagram.png" alt="Instagram">
-  </a>
-</div>
+      <!-- Botões Sociais -->
+      <div class="social-container">
+        <a href="https://wa.me/5516981095578" target="_blank" class="social-btn">
+          <img src="assets/icons/icone-whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com/coperativa_artedigital" target="_blank" class="social-btn">
+          <img src="assets/icons/icon-instagram.png" alt="Instagram">
+        </a>
+      </div>
 
-    <!-- Links -->
-    <ul class="links-legais">
-      <li><a href="#">Política de Privacidade</a></li>
-      <li><a href="#">Declaração de Acessibilidade</a></li>
-      <li><a href="#">Termos e Condições</a></li>
-      <li><a href="#">Política de Reembolso</a></li>
-      <li><a href="#">Política de Envio</a></li>
-    </ul>
-  </div>
-</section>
+      <!-- Links -->
+      <ul class="links-legais">
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Declaração de Acessibilidade</a></li>
+        <li><a href="#">Termos e Condições</a></li>
+        <li><a href="#">Política de Reembolso</a></li>
+        <li><a href="#">Política de Envio</a></li>
+      </ul>
+    </div>
+  </section>
 
-<script>
-  // Pega todos os elementos com .reveal
-  const reveals = document.querySelectorAll('.reveal');
+  <!-- Script de animação reveal -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active'); // ativa a animação
-        // Se quiser que a animação só dispare uma vez:
-        observer.unobserve(entry.target);
-      }
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
     });
-  }, { threshold: 0.15 }); // ativa quando 15% do elemento estiver visível
-
-  reveals.forEach(reveal => {
-    observer.observe(reveal);
-  });
-</script>
+  </script>
 </body>
-
 </html>
